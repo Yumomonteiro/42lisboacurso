@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yude-oli <yude-oli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yude-oli <yude-oli@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 10:41:36 by yude-oli          #+#    #+#             */
-/*   Updated: 2023/10/14 11:06:18 by yude-oli         ###   ########.fr       */
+/*   Updated: 2023/10/16 12:41:12 by yude-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static int ft_printf_checker(char s, va_list *args, int *len, int *i)
+void ft_printf_checker(char s, va_list *args, int *len, int *i)
 {
 	if(s == 's')
 		ft_string(va_arg(*args, char *), len);
@@ -32,8 +32,6 @@ static int ft_printf_checker(char s, va_list *args, int *len, int *i)
 		ft_putchar_len('%', len);
 	else
 		(*i)--;
-	
-	return (0);
 }
 
 int	ft_printf(const char *string, ...)
@@ -62,3 +60,26 @@ int	ft_printf(const char *string, ...)
 	va_end(args);
 	return (len);
 }
+/*
+int main() {
+    char chr = 'A';
+    int n = 10;
+    char str[] = "Hello, World!";
+    unsigned int nbr = 123;
+    void *ptr = &n;
+
+    int len = ft_printf("This is a test:\n"
+                       "Character: %c\n"
+                       "Integer: %d\n"
+                       "String: %s\n"
+                       "Hexadecimal (lowercase): %x\n"
+                       "Hexadecimal (uppercase): %X\n"
+                       "Unsigned Integer: %u\n"
+                       "Pointer: %p\n",
+                       chr, n, str, nbr, nbr, nbr, ptr);
+    
+    printf("ft_printf printed %d characters.\n", len);
+
+    return 0;
+}
+*/

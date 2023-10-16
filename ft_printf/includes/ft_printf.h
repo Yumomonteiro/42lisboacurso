@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yude-oli <yude-oli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yude-oli <yude-oli@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 10:35:52 by yude-oli          #+#    #+#             */
-/*   Updated: 2023/10/14 11:15:59 by yude-oli         ###   ########.fr       */
+/*   Updated: 2023/10/16 11:41:37 by yude-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #include <stdarg.h>
 #include <limits.h>
 
-static int  ft_printf_checker(char s, va_list *args, int *len, int *i);
+void        ft_printf_checker(char s, va_list *args, int *len, int *i);
 
 void	    ft_putchar_len(char character, int *len);
 

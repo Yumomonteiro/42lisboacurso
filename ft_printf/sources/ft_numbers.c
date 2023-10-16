@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_numbers.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yude-oli <yude-oli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yude-oli <yude-oli@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 10:40:53 by yude-oli          #+#    #+#             */
-/*   Updated: 2023/10/14 11:19:47 by yude-oli         ###   ########.fr       */
+/*   Updated: 2023/10/16 13:31:51 by yude-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,14 @@ void	ft_pointer(size_t pointer, int *len)
 
 	base_char = "0123456789abcdef";
 	i = 0;
-	write(1, "0x", 2);
+	 if (pointer == 0)
+    {
+        write (1, "(nil)", 5);
+        (*len) += 5;
+        return ;
+    }
+    write(1, "0x", 2);
 	(*len) += 2;
-	if (pointer == 0)
-	{
-		ft_putchar_len('0', len);
-		return ;
-	}
 	while (pointer != 0)
 	{
 		string[i] = base_char[pointer % 16];

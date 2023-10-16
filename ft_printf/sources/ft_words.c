@@ -6,7 +6,7 @@
 /*   By: yude-oli <yude-oli@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 13:30:59 by yude-oli          #+#    #+#             */
-/*   Updated: 2023/10/16 11:55:26 by yude-oli         ###   ########.fr       */
+/*   Updated: 2023/10/16 13:27:11 by yude-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ void	ft_putchar_len(char character, int *len)
 
 void	ft_string(char *args, int *len)
 {
-	size_t	i;
+	int	i;
 	
 	i = 0;
 	if(!args)
 	{
-		write(1, "(NULL)", 6);
+		write(1, "(null)", 6);
 		(*len) += 6;
 		return ;
 	}

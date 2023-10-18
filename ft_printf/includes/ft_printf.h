@@ -6,7 +6,7 @@
 /*   By: yude-oli <yude-oli@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 10:35:52 by yude-oli          #+#    #+#             */
-/*   Updated: 2023/10/16 11:41:37 by yude-oli         ###   ########.fr       */
+/*   Updated: 2023/10/18 10:58:31 by yude-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #include <stdarg.h>
 #include <limits.h>
 
-void        ft_printf_checker(char s, va_list *args, int *len, int *i);
+void        ft_printf_checker(char s, va_list *args, int *len, int i);
 
 void	    ft_putchar_len(char character, int *len);
 

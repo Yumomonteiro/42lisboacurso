@@ -6,13 +6,13 @@
 /*   By: yude-oli <yude-oli@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 10:41:36 by yude-oli          #+#    #+#             */
-/*   Updated: 2023/10/16 12:41:12 by yude-oli         ###   ########.fr       */
+/*   Updated: 2023/10/18 10:57:38 by yude-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void ft_printf_checker(char s, va_list *args, int *len, int *i)
+void ft_printf_checker(char s, va_list *args, int *len, int i)
 {
 	if(s == 's')
 		ft_string(va_arg(*args, char *), len);
@@ -31,7 +31,7 @@ void ft_printf_checker(char s, va_list *args, int *len, int *i)
 	else if (s == '%')
 		ft_putchar_len('%', len);
 	else
-		(*i)--;
+		i--;
 }
 
 int	ft_printf(const char *string, ...)
@@ -48,7 +48,7 @@ int	ft_printf(const char *string, ...)
 		if(string[i] == '%')
 		{
 			i++;
-			ft_printf_checker(string[i], &args, &len, &i);
+			ft_printf_checker(string[i], &args, &len, i);
 			i++;
 		}
 		else
@@ -68,7 +68,7 @@ int main() {
     unsigned int nbr = 123;
     void *ptr = &n;
 
-    int len = ft_printf("This is a test:\n"
+    int len = ft_printf("test:\n"
                        "Character: %c\n"
                        "Integer: %d\n"
                        "String: %s\n"
@@ -77,9 +77,9 @@ int main() {
                        "Unsigned Integer: %u\n"
                        "Pointer: %p\n",
                        chr, n, str, nbr, nbr, nbr, ptr);
-    
-    printf("ft_printf printed %d characters.\n", len);
+    printf(" %d characters.\n", len);
 
     return 0;
 }
+
 */

@@ -1,7 +1,7 @@
 NAME = libftprintf.a
-SOURCES = ./sources/ft_printf.c \
-	   		./sources/ft_numbers.c \
-				./sources/ft_words.c \
+SOURCES = ft_printf.c \
+	   		ft_numbers.c \
+				ft_words.c \
 
 OBJECTS = $(SOURCES:.c=.o)
 AR = ar

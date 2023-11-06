@@ -6,17 +6,17 @@
 /*   By: yude-oli <yude-oli@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 10:41:36 by yude-oli          #+#    #+#             */
-/*   Updated: 2023/10/18 10:57:38 by yude-oli         ###   ########.fr       */
+/*   Updated: 2023/11/01 12:12:55 by yude-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
-void ft_printf_checker(char s, va_list *args, int *len, int i)
+void	ft_printf_checker(char s, va_list *args, int *len, int i)
 {
-	if(s == 's')
+	if (s == 's')
 		ft_string(va_arg(*args, char *), len);
-	else if(s == 'd' || s == 'i')
+	else if (s == 'd' || s == 'i')
 		ft_intnumber(va_arg(*args, int), len);
 	else if (s == 'c')
 		ft_putchar_len(va_arg(*args, int), len);
@@ -37,15 +37,15 @@ void ft_printf_checker(char s, va_list *args, int *len, int i)
 int	ft_printf(const char *string, ...)
 {
 	va_list	args;
-	int	i;
-	int	len;
+	int		i;
+	int		len;
 
 	i = 0;
 	len = 0;
 	va_start(args, string);
 	while (string[i] != '\0')
 	{
-		if(string[i] == '%')
+		if (string[i] == '%')
 		{
 			i++;
 			ft_printf_checker(string[i], &args, &len, i);
@@ -60,26 +60,46 @@ int	ft_printf(const char *string, ...)
 	va_end(args);
 	return (len);
 }
-/*
+
 int main() {
-    char chr = 'A';
-    int n = 10;
-    char str[] = "Hello, World!";
-    unsigned int nbr = 123;
-    void *ptr = &n;
+/*	int len;
 
-    int len = ft_printf("test:\n"
-                       "Character: %c\n"
-                       "Integer: %d\n"
-                       "String: %s\n"
-                       "Hexadecimal (lowercase): %x\n"
-                       "Hexadecimal (uppercase): %X\n"
-                       "Unsigned Integer: %u\n"
-                       "Pointer: %p\n",
-                       chr, n, str, nbr, nbr, nbr, ptr);
-    printf(" %d characters.\n", len);
+	// Exemplo 1: Converter 255 para hexadecimal em letras minúsculas
+	unsigned int num1 = 255;
+	printf("Hexadecimal (minúsculas) para %u: ", num1);
+	ft_hexa_in_lower_or_upper(num1, &len, 'x'); // 'x' para minúsculas
+	printf("\nlen = %d\n", len);
 
-    return 0;
+	// Exemplo 2: Converter 255 para hexadecimal em letras maiúsculas
+	unsigned int num2 = 255;
+	printf("Hexadecimal (maiúsculas) para %u: ", num2);
+	ft_hexa_in_lower_or_upper(num2, &len, 'X'); // 'X' para maiúsculas
+	printf("\nlen = %d\n", len);
+
+
+	char chr = 'A';
+	float n = 3.42;
+	int n2 = 0;
+	char str[] = "Hello, World!";
+	unsigned int nbr = 10;
+	void *ptr = &n2;
+
+    len = ft_printf("test:\n"
+					   "Character: %c\n"
+					   "Integer: %d\n"
+					   "String: %s\n"
+					   "Hexadecimal (lowercase): %x\n"
+					   "Hexadecimal (uppercase): %X\n"
+					   "Unsigned Integer: %u\n"
+					   "Pointer: %p\n",
+					   chr, n, str, nbr, nbr, nbr, ptr);
+	printf(" %d characters.\n", len);
+    printf("%u\n", nbr);
+	return 0;
+}
+*/
+unsigned int nbr = -1;
+printf("%u\n", nbr);
+ft_printf("%u\n", nbr);
 }
 
-*/

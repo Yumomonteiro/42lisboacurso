@@ -6,7 +6,7 @@
 /*   By: yude-oli <yude-oli@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 15:47:03 by yude-oli          #+#    #+#             */
-/*   Updated: 2023/10/27 17:33:18 by yude-oli         ###   ########.fr       */
+/*   Updated: 2023/10/28 09:16:36 by yude-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,16 @@ char	*get_next_line(int fd)
 				return (line);
 		}
 		flag = line_updater(&line, buffer);
+        printf("antes de limpar %s\n", buffer);
 		buffer_clear(buffer);
+        printf("depois de limpar\n %s\n", buffer);
 		if (flag == 1)
 			return (line);
 		if (flag == -1)
 			return (NULL);
 	}
 }
-/*
+
 int	main(void)
 {
 	char	*line;
@@ -60,4 +62,4 @@ int	main(void)
     }    
 	close(fd1);
     return (0);
-}*/
+}
